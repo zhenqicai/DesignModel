@@ -1,0 +1,37 @@
+抽象工厂模式
+抽象工厂模式（Abstract Factory Pattern）是围绕一个超级工厂创建其他工厂。该超级工厂又称为其他工厂的工厂。
+这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
+在抽象工厂模式中，接口是负责创建一个相关对象的工厂，不需要显式指定它们的类。每个生成的工厂都能按照工厂模式提供对象。
+
+步骤 1
+为形状创建一个接口。
+Shape.java
+
+步骤 2
+创建实现接口的实体类。
+Rectangle.java   Square.java   Circle.java
+
+步骤 3
+为颜色创建一个接口。
+Color.java
+
+步骤4
+创建实现接口的实体类。
+Red.java   Green.java   Blue.java
+
+步骤 5
+为 Color 和 Shape 对象创建抽象类来获取工厂。
+AbstractFactory.java
+
+步骤 6
+创建扩展了 AbstractFactory 的工厂类，基于给定的信息生成实体类的对象。
+ShapeFactory.java   ColorFactory.java
+
+步骤 7
+创建一个工厂创造器/生成器类，通过传递形状或颜色信息来获取工厂。
+FactoryProducer.java
+
+步骤 8
+使用 FactoryProducer 来获取 AbstractFactory，通过传递类型信息来获取实体类的对象。
+AbstractFactoryPatternDemo.java
+
